@@ -43,17 +43,18 @@ export const InterceptTextBox: React.SFC<InterceptTextBox> = props => {
           />
         </div>
         <div className="response">
-          <label className="responseTextlabel">Mocked Response Text</label>
+          <label className="responseTextlabel">Mocked Response Text </label>
           <button
-            title="Fetch Response Text"
+            title="FetchResponse Text"
             className="fetch-responsetext btn-sm btn-primary"
+            disabled={props.requestRecords.loading}
             onClick={() => {
               //empty the earlier set error before requesting for data again
               props.fetchFailure("", requestId, props.currentTabId);
               props.fetchResponse(props.rowProps.checkbox, props.currentTabId);
             }}
           >
-            Fetch Response
+            Fetch{props.requestRecords.loading ? 'ing':''} Response 
           </button>
           <textarea
             name="responseText"
