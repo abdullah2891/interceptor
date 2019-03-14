@@ -164,6 +164,12 @@ export const reducer = (state = INITIAL_POPUP_STATE, action: Action) => {
       return extendTabRecords(state, action.payload, {
         isInterceptorOn: action.payload.value
       });
+    case actionType.FETCHING_DATA:
+  console.warn("test");
+      return extendRequestRecords(state, action.payload, {
+        loading: action.payload.loading
+      });
+
     case actionType.FETCH_DATA_SUCCESS:
       return extendRequestRecords(state, action.payload, {
         serverResponse: action.payload.response

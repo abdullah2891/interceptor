@@ -23,6 +23,7 @@ export const InterceptTextBox: React.SFC<InterceptTextBox> = props => {
   const contentTypeValue = props.requestRecords.contentType || defaultContentType;
   return (
     <div className="form-container">
+      {console.log("test",props.requestRecords.loading)}
       <div>
         {props.requestRecords.serverError ? (
           <p className="popup-error-message popup-error"> {props.requestRecords.serverError} </p>
