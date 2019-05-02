@@ -33,7 +33,7 @@ export default class AddRuleModal extends React.Component<AddRuleModalProps, {}>
       addRequestDetails: { fields }
     } = this.props;
     const IsUrl: boolean = this.isUrl(fields.url);
-    if (IsUrl) {
+    if (IsUrl || true) {
       this.props.addRequest(fields);
       this.props.handleClose();
     } else {

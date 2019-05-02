@@ -38,6 +38,7 @@ interface DispatchProps {
   updateRequest: typeof actionTypes.updateRequest;
   toggleAddRequestForm: typeof actionTypes.toggleAddRequestForm;
   handleChangeUrl: typeof actionTypes.handleChangeUrl;
+  handleChangeCheckBox: typeof actionTypes.handleChangeCheckBox;
   fetchFailure: typeof actionTypes.fetchFailure;
   updateAddRequestFields: typeof updateAddRequestFields;
   resetAddRequest: typeof resetAddRequest;
@@ -213,6 +214,7 @@ export class Popup extends React.Component<POPUP_PROPS & DispatchProps, {}> {
             updateInterceptorStatus={props.updateInterceptorStatus}
             fetchResponse={props.fetchResponse}
             handleChangeUrl={props.handleChangeUrl}
+            handleChangeCheckBox={props.handleChangeCheckBox}
             fetchFailure={props.fetchFailure}
           />
         </div>
@@ -247,6 +249,7 @@ const mapDispatchToProps: DispatchProps = {
   updateRequest: actionTypes.updateRequest,
   toggleAddRequestForm: actionTypes.toggleAddRequestForm,
   handleChangeUrl: actionTypes.handleChangeUrl,
+  handleChangeCheckBox: actionTypes.handleChangeCheckBox,
   fetchFailure: actionTypes.fetchFailure,
   updateAddRequestFields: updateAddRequestFields,
   resetAddRequest: resetAddRequest,

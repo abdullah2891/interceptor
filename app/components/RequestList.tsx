@@ -9,6 +9,7 @@ export interface RequestObj {
   requestRecords: any;
   currentTabId: number;
   handleChangeUrl: (value: string, tabId: number, index: number) => void;
+  handleChangeCheckBox: (value: string, tabId: number, index: number) => void;
   handleCheckedRequests?: (requests: Array<chrome.webRequest.WebRequestDetails>) => void;
   handleRespTextChange?: () => (value: string, reqId: string) => void;
   handleStatusCodeChange?: (value: string, reqId: string) => void;
@@ -111,6 +112,7 @@ const RequestList: React.SFC<RequestObj> = props => {
               fetchResponse={props.fetchResponse}
               index={row.index}
               handleChangeUrl={props.handleChangeUrl}
+              handleChangeCheckBox={props.handleChangeCheckBox}
               fetchFailure={props.fetchFailure}
             />
           );

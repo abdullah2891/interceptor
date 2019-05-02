@@ -21,6 +21,7 @@ export const InterceptTextBox: React.SFC<InterceptTextBox> = props => {
   const responseTextValue = props.requestRecords.responseText || defaultResponseText;
   const statusCodeValue = props.requestRecords.statusCode || defaultStatusCode;
   const contentTypeValue = props.requestRecords.contentType || defaultContentType;
+  console.log({props})
   return (
     <div className="form-container">
       <div>
@@ -41,6 +42,7 @@ export const InterceptTextBox: React.SFC<InterceptTextBox> = props => {
             }}
           />
         </div>
+
         <div className="response">
           <label className="responseTextlabel">Mocked Response Text </label>
           <button
@@ -66,6 +68,16 @@ export const InterceptTextBox: React.SFC<InterceptTextBox> = props => {
               props.handleRespTextChange(event.target.value, requestId, props.currentTabId);
             }}
           />
+          <label htmlFor="">Regex Check</label>
+           <input 
+             name="regexCheck"
+             type = "checkbox"
+             checked = {props.rowProps.checkbox.matchByPattern}
+             onChange={(event)=>{
+               console.log(event)
+               props.handleChangeCheckBox(event.target.checked , props.currentTabId, props.Index);
+             })}
+            />
         </div>
         <div className="content">
           <label htmlFor="">Content Type</label>

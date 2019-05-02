@@ -19,6 +19,7 @@ export const TOGGLE_LISTENING = "TOGGLE_LISTENING";
 export const INITIALISE_DEFAULTS = "INITIALISE_DEFAULTS";
 export const TOGGLE_SHOW_ADD_REQUEST = "TOGGLE_SHOW_ADD_REQUEST";
 export const CHANGE_URL_TABLE = "CHANGE_URL_TABLE";
+export const CHANGE_CHECKBOX = "CHANGE_CHECKBOX";
 
 // Action Creators
 export function errorNotify(errorMessage: string, tabId: number) {
@@ -106,4 +107,7 @@ export const toggleAddRequestForm = (showAddRuleModal: boolean) => {
 };
 export const handleChangeUrl = (value: string, tabId: number, index: number) => {
   return { type: CHANGE_URL_TABLE, payload: { value, tabId, index } };
+};
+export const handleChangeCheckBox = (value: string, tabId: number, index: number) => {
+  return { type: CHANGE_CHECKBOX , payload: { value, tabId, index } };
 };

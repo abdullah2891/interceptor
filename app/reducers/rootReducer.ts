@@ -186,6 +186,8 @@ export const reducer = (state = INITIAL_POPUP_STATE, action: Action) => {
       return requestsReducer(state, action.payload, [action.payload.request]);
     case actionType.CHANGE_URL_TABLE:
       return changeRequestUrl(state, action.payload);
+    case actionType.CHANGE_CHECKBOX:
+      return changeRequestUrl(state, action.payload);
     default:
       return state;
   }
