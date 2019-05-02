@@ -109,5 +109,6 @@ export const handleChangeUrl = (value: string, tabId: number, index: number) => 
   return { type: CHANGE_URL_TABLE, payload: { value, tabId, index } };
 };
 export const handleChangeCheckBox = (value: string, tabId: number, index: number) => {
+  console.log("test")
   return { type: CHANGE_CHECKBOX , payload: { value, tabId, index } };
 };

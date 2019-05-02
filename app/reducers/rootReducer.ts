@@ -99,6 +99,7 @@ function extendRequestRecords(state: POPUP_PROPS, payload: any, newRequestRecord
 
 //ACTION CONSTANTS
 export const reducer = (state = INITIAL_POPUP_STATE, action: Action) => {
+  console.log(action)
   switch (action.type) {
     case actionType.INITIALISE_DEFAULTS:
       return {
@@ -186,8 +187,14 @@ export const reducer = (state = INITIAL_POPUP_STATE, action: Action) => {
       return requestsReducer(state, action.payload, [action.payload.request]);
     case actionType.CHANGE_URL_TABLE:
       return changeRequestUrl(state, action.payload);
+
     case actionType.CHANGE_CHECKBOX:
-      return changeRequestUrl(state, action.payload);
+      var test =  extendRequestRecords(state,action.payload,{
+        matchUrlPattern: !action.payload.matchUrlPattern
+      });
+
+console.log(test)
+      return test
     default:
       return state;
   }
