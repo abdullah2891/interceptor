@@ -71,7 +71,7 @@ class Intercept {
     );
 
     const checkedReqs = presentState.checkedReqs;
-    console.log(checkedReqs)
+
     let storeRequestRecords = presentState.requestRecords;
     let checkedTabRecords = {};
     for (let checkedReqId in checkedReqs) {
@@ -127,6 +127,7 @@ class Intercept {
   };
 
   runInterceptor = (selectedReqs: selectedReqs) => {
+    console.log({selectedReqs});
     var selectedInterceptCode = `
      (function(){
        if (window.interceptor) {

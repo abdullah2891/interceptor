@@ -189,12 +189,10 @@ export const reducer = (state = INITIAL_POPUP_STATE, action: Action) => {
       return changeRequestUrl(state, action.payload);
 
     case actionType.CHANGE_CHECKBOX:
-      var test =  extendRequestRecords(state,action.payload,{
-        matchUrlPattern: !action.payload.matchUrlPattern
+      return extendRequestRecords(state,action.payload,{
+        matchUrlPattern: action.payload.value
       });
 
-console.log(test)
-      return test
     default:
       return state;
   }
